@@ -73,7 +73,7 @@ lib/
 ├── core/                    # Global App features
 │   ├── errors/                # Handling Failures and Exceptions
 │   ├── network/               # Checking connectivity state
-│   ├── strings/               # Messages for failures and exceptions
+│   ├── usecases/              # Messages for failures and exceptions
 │   ├── utils/                 # Snackbars and application theme
 │   └── widgets/               # General widgets, e.g., Loading widget
 ├── features/                # Specific App features
