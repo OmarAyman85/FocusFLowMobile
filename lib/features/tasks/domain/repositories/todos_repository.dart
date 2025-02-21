@@ -4,7 +4,7 @@ import 'package:focusflow/features/tasks/domain/entities/todo.dart';
 
 abstract class TodosRepository {
   Future<Either<Failure, List<Todo>>> getAllTodos();
-  Future<Either<Failure, Unit>> addTodos();
-  Future<Either<Failure, Unit>> updateTodos();
-  Future<Either<Failure, Unit>> deleteTodos();
+  Future<Either<Failure, Unit>> addTodos(Todo todo);
+  Future<Either<Failure, Unit>> updateTodos(Todo todo);
+  Future<Either<Failure, Unit>> deleteTodos(int id);
 }

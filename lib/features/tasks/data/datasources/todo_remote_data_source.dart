@@ -108,95 +108,95 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
 //********************************************************************** */
 //*****************HTTP IMPLEMENTATION********************************** */
 //********************************************************************** */
-class TodoRemoteDataSourceHttpImp implements TodoRemoteDataSource {
-  final String baseUrl = "https://dummyjson.com/todos";
-  //******************FETCHING TODOS************************************** */
-  @override
-  Future<List<TodoModel>> getAllTodos() async {
-    final response = await http.get(Uri.parse(baseUrl));
+// class TodoRemoteDataSourceHttpImp implements TodoRemoteDataSource {
+//   final String baseUrl = "https://dummyjson.com/todos";
+//   //******************FETCHING TODOS************************************** */
+//   @override
+//   Future<List<TodoModel>> getAllTodos() async {
+//     final response = await http.get(Uri.parse(baseUrl));
 
-    if (response.statusCode == 200) {
-      // Decode the raw JSON string to a Map
-      final Map<String, dynamic> jsonData = json.decode(response.body);
+//     if (response.statusCode == 200) {
+//       // Decode the raw JSON string to a Map
+//       final Map<String, dynamic> jsonData = json.decode(response.body);
 
-      // Accessing the 'todos' array inside the JSON
-      final List decodedJson = jsonData['todos'] as List;
+//       // Accessing the 'todos' array inside the JSON
+//       final List decodedJson = jsonData['todos'] as List;
 
-      // Mapping the JSON to a list of TodoModel objects
-      final List<TodoModel> todoModels =
-          decodedJson
-              .map<TodoModel>(
-                (jsonTodoModel) => TodoModel.fromJson(jsonTodoModel),
-              )
-              .toList();
+//       // Mapping the JSON to a list of TodoModel objects
+//       final List<TodoModel> todoModels =
+//           decodedJson
+//               .map<TodoModel>(
+//                 (jsonTodoModel) => TodoModel.fromJson(jsonTodoModel),
+//               )
+//               .toList();
 
-      return todoModels;
-    } else {
-      throw ServerException();
-    }
-  }
+//       return todoModels;
+//     } else {
+//       throw ServerException();
+//     }
+//   }
 
-  //******************ADDING TODOS************************************** */
-  @override
-  Future<Unit> addTodos(TodoModel todoModel) async {
-    final response = await http.post(
-      Uri.parse('$baseUrl/todos/add'),
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Authorization': 'Bearer YOUR_TOKEN',
-        // 'Custom-Header': 'CustomValue',
-      },
-      body: json.encode({
-        'id': todoModel.id,
-        'todo': todoModel.todo,
-        'completed': todoModel.completed,
-      }),
-    );
+//   //******************ADDING TODOS************************************** */
+//   @override
+//   Future<Unit> addTodos(TodoModel todoModel) async {
+//     final response = await http.post(
+//       Uri.parse('$baseUrl/todos/add'),
+//       headers: {
+//         'Content-Type': 'application/json',
+//         // 'Authorization': 'Bearer YOUR_TOKEN',
+//         // 'Custom-Header': 'CustomValue',
+//       },
+//       body: json.encode({
+//         'id': todoModel.id,
+//         'todo': todoModel.todo,
+//         'completed': todoModel.completed,
+//       }),
+//     );
 
-    if (response.statusCode == 200) {
-      return Future.value(unit);
-    } else {
-      throw ServerException();
-    }
-  }
+//     if (response.statusCode == 200) {
+//       return Future.value(unit);
+//     } else {
+//       throw ServerException();
+//     }
+//   }
 
-  //******************UPDATING TODOS************************************** */
-  @override
-  Future<Unit> updateTodos(TodoModel todoModel) async {
-    final todoId = todoModel.id.toString();
-    final body = json.encode({
-      "todo": todoModel.todo,
-      "completed": todoModel.completed,
-    });
-    final response = await http.put(
-      Uri.parse('$baseUrl/todos/$todoId'),
-      headers: {
-        "Content-Type": "application/json",
-        // 'Authorization': 'Bearer YOUR_TOKEN',
-      },
-      body: body,
-    );
-    if (response.statusCode == 200) {
-      return Future.value(unit);
-    } else {
-      throw ServerException();
-    }
-  }
+//   //******************UPDATING TODOS************************************** */
+//   @override
+//   Future<Unit> updateTodos(TodoModel todoModel) async {
+//     final todoId = todoModel.id.toString();
+//     final body = json.encode({
+//       "todo": todoModel.todo,
+//       "completed": todoModel.completed,
+//     });
+//     final response = await http.put(
+//       Uri.parse('$baseUrl/todos/$todoId'),
+//       headers: {
+//         "Content-Type": "application/json",
+//         // 'Authorization': 'Bearer YOUR_TOKEN',
+//       },
+//       body: body,
+//     );
+//     if (response.statusCode == 200) {
+//       return Future.value(unit);
+//     } else {
+//       throw ServerException();
+//     }
+//   }
 
-  //******************DELETEING TODOS************************************** */
-  @override
-  Future<Unit> deleteTodos(int todoId) async {
-    final response = await http.delete(
-      Uri.parse('$baseUrl/todos/$todoId'),
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Authorization': 'Bearer YOUR_TOKEN',
-      },
-    );
-    if (response.statusCode == 200) {
-      return Future.value(unit);
-    } else {
-      throw ServerException();
-    }
-  }
-}
+//   //******************DELETEING TODOS************************************** */
+//   @override
+//   Future<Unit> deleteTodos(int todoId) async {
+//     final response = await http.delete(
+//       Uri.parse('$baseUrl/todos/$todoId'),
+//       headers: {
+//         'Content-Type': 'application/json',
+//         // 'Authorization': 'Bearer YOUR_TOKEN',
+//       },
+//     );
+//     if (response.statusCode == 200) {
+//       return Future.value(unit);
+//     } else {
+//       throw ServerException();
+//     }
+//   }
+// }
