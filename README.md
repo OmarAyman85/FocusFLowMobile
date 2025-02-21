@@ -77,7 +77,20 @@ lib/
 │   ├── utils/                 # Snackbars and application theme
 │   └── widgets/               # General widgets, e.g., Loading widget
 ├── features/                # Specific App features
-│   └── task_manager/          # The task management feature and its components
+│   └── tasks/                  # The task management feature and its components
+│   │   └── data/                # Data Layer including API and Local storage
+|   │   |   ├── datasources/       # Remote and local data sources
+|   │   |   ├── models/            # Data models
+|   │   |   └── repositories/      # Repository implementations
+│   │   ├── domain/              # Business logic
+|   │   │   ├── entities/          # Core entities
+|   │   │   ├── repositories/      # Repository interfaces
+|   │   │   └── usecases/          # Application use cases
+│   │   ├── presentation/        # UI and Widgets
+│   │   │   ├── bloc/              # State management using BLOC
+│   │   │   ├── pages/             # App's pages
+│   │   │   └── widgets/           # Reusable widgets
+│   └── auth/                   # The task management feature and its components
 │   │   └── data/                # Data Layer including API and Local storage
 |   │   |   ├── datasources/       # Remote and local data sources
 |   │   |   ├── models/            # Data models
