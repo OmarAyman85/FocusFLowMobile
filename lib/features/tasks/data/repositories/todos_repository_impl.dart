@@ -11,29 +11,29 @@ import 'package:focusflow/features/tasks/domain/repositories/todos_repository.da
 typedef DeleteOrUpdateOrAddTodo = Future<Unit> Function();
 
 class TodosRepositoryImpl implements TodosRepository {
-  final TodoRemoteDataSource _remoteDataSource;
-  final TodoLocalDataSource _localDataSource;
-  final NetworkInfo _networkInfo;
+  final TodoRemoteDataSource remoteDataSource;
+  final TodoLocalDataSource localDataSource;
+  final NetworkInfo networkInfo;
 
-  TodosRepositoryImpl(
-    this._remoteDataSource,
-    this._localDataSource,
-    this._networkInfo,
-  );
+  TodosRepositoryImpl({
+    required this.remoteDataSource,
+    required this.localDataSource,
+    required this.networkInfo,
+  });
 
   @override
   Future<Either<Failure, List<Todo>>> getAllTodos() async {
-    if (await _networkInfo.isConnected) {
+    if (await networkInfo.isConnected) {
       try {
-        final remoteTodos = await _remoteDataSource.getAllTodos();
-        _localDataSource.cacheTodos(remoteTodos);
+        final remoteTodos = await remoteDataSource.getAllTodos();
+        localDataSource.cacheTodos(remoteTodos);
         return Right(remoteTodos);
       } on ServerException {
         return Left(ServerFailure());
       }
     } else {
       try {
-        final localTodos = await _localDataSource.getCachedTodos();
+        final localTodos = await localDataSource.getCachedTodos();
         return Right(localTodos);
       } on EmptyCacheException {
         return Left(EmptyCacheFailure());
@@ -48,7 +48,7 @@ class TodosRepositoryImpl implements TodosRepository {
       completed: todo.completed,
     );
     return await _getMessage(() {
-      return _remoteDataSource.addTodos(todoModel);
+      return remoteDataSource.addTodos(todoModel);
     });
   }
 
@@ -59,21 +59,21 @@ class TodosRepositoryImpl implements TodosRepository {
       completed: todo.completed,
     );
     return await _getMessage(() {
-      return _remoteDataSource.updateTodos(todoModel);
+      return remoteDataSource.updateTodos(todoModel);
     });
   }
 
   @override
   Future<Either<Failure, Unit>> deleteTodos(int todoId) async {
     return await _getMessage(() {
-      return _remoteDataSource.deleteTodos(todoId);
+      return remoteDataSource.deleteTodos(todoId);
     });
   }
 
   Future<Either<Failure, Unit>> _getMessage(
     DeleteOrUpdateOrAddTodo deleteOrUpdateOrAddTodo,
   ) async {
-    if (await _networkInfo.isConnected) {
+    if (await networkInfo.isConnected) {
       try {
         await deleteOrUpdateOrAddTodo();
         return Right(unit);

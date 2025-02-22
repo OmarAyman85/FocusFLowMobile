@@ -6,6 +6,8 @@ import 'package:focusflow/core/errors/exceptions.dart';
 import 'package:focusflow/features/tasks/data/models/todo_model.dart';
 import 'package:http/http.dart' as http;
 
+const baseUrl = "https://dummyjson.com/todos";
+
 abstract class TodoRemoteDataSource {
   Future<List<TodoModel>> getAllTodos();
   Future<Unit> addTodos(TodoModel todoModel);
@@ -17,7 +19,6 @@ abstract class TodoRemoteDataSource {
 //******************DIO IMPLEMENTATION********************************** */
 //********************************************************************** */
 class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
-  final String baseUrl = "https://dummyjson.com/todos";
   final Dio _dio = Dio();
   //******************FETCHING TODOS************************************** */
   @override
@@ -109,7 +110,6 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
 //*****************HTTP IMPLEMENTATION********************************** */
 //********************************************************************** */
 // class TodoRemoteDataSourceHttpImp implements TodoRemoteDataSource {
-//   final String baseUrl = "https://dummyjson.com/todos";
 //   //******************FETCHING TODOS************************************** */
 //   @override
 //   Future<List<TodoModel>> getAllTodos() async {
