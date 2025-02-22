@@ -7,6 +7,6 @@ sealed class TodoEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class GetAllTasksEvent extends TodoEvent {}
+class GetAllTodosEvent extends TodoEvent {}
 
-class RefreshTasksEvent extends TodoEvent {}
+class RefreshTodosEvent extends TodoEvent {}

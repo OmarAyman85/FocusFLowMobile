@@ -14,11 +14,11 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
 
   TodoBloc({required this.getAllTodos}) : super(TodoInitial()) {
     on<TodoEvent>((event, emit) async {
-      if (event is GetAllTasksEvent) {
+      if (event is GetAllTodosEvent) {
         emit(LoadingTodosState());
         final failureOrTasks = await getAllTodos();
         emit(_mapFailureOrTodosToState(failureOrTasks));
-      } else if (event is RefreshTasksEvent) {
+      } else if (event is RefreshTodosEvent) {
         emit(LoadingTodosState());
         final failureOrTasks = await getAllTodos();
         emit(_mapFailureOrTodosToState(failureOrTasks));

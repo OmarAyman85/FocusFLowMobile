@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:focusflow/core/utils/theme/dark_theme.dart';
 import 'package:focusflow/core/utils/theme/light_theme.dart';
 import 'package:focusflow/features/tasks/presentation/bloc/add_delete_update_bloc/add_delete_update_bloc.dart';
 import 'package:focusflow/features/tasks/presentation/bloc/todo_bloc/todo_bloc.dart';
@@ -20,10 +19,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => di.sl<TodoBloc>()),
+        BlocProvider(create: (_) => di.sl<TodoBloc>()..add(GetAllTodosEvent())),
         BlocProvider(create: (_) => di.sl<AddDeleteUpdateBlocBloc>()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Focus FLow',
         theme: getLightTheme(),
         home: TodosPage(),
