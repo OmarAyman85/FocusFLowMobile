@@ -17,8 +17,8 @@ FocusFlow is a simple and intuitive task management app built with Flutter. It a
 
 ## 🖼️ **Screenshots**
 
-| Home Screen | Add Task | Edit Task |
-|-------------|-----------|-----------|
+| Home Screen                   | Add Task                              | Edit Task                               |
+| ----------------------------- | ------------------------------------- | --------------------------------------- |
 | ![Home](screenshots/home.png) | ![Add Task](screenshots/add_task.png) | ![Edit Task](screenshots/edit_task.png) |
 
 ---
@@ -26,17 +26,20 @@ FocusFlow is a simple and intuitive task management app built with Flutter. It a
 ## 📦 **Installation**
 
 1. **Clone the repository:**
+
 ```bash
 git clone https://github.com/OmarAyman85/FocusFlow.git
 cd FocusFlow
 ```
 
 2. **Install dependencies:**
+
 ```bash
 flutter pub get
 ```
 
 3. **Run the app:**
+
 ```bash
 flutter run
 ```
@@ -114,21 +117,25 @@ lib/
 - **Base URL:** `https://dummyjson.com/todos`
 
 ### Fetch Tasks
+
 ```http
 GET /todos
 ```
 
 ### Create Task
+
 ```http
 POST /todos
 ```
 
 ### Update Task
+
 ```http
 PUT /todos/{id}
 ```
 
 ### Delete Task
+
 ```http
 DELETE /todos/{id}
 ```
@@ -147,17 +154,23 @@ flutter test
 
 1. **Fork the project**
 2. **Create a feature branch:**
+
 ```bash
 git checkout -b feature/YourFeature
 ```
+
 3. **Commit your changes:**
+
 ```bash
 git commit -m 'Add YourFeature'
 ```
+
 4. **Push to the branch:**
+
 ```bash
 git push origin feature/YourFeature
 ```
+
 5. **Open a Pull Request**
 
 ---
@@ -175,4 +188,3 @@ This project is licensed under the MIT License.
 - **LinkedIn:** [Omar Ayman](https://www.linkedin.com/in/ommarayman/)
 
 ---
-
