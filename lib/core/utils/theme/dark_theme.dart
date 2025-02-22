@@ -35,6 +35,10 @@ ThemeData getDarkTheme() {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
     ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: Color(0xFF388E3C),
+      foregroundColor: Colors.white,
+    ),
     colorScheme: ColorScheme.fromSwatch().copyWith(
       brightness: Brightness.dark,
       secondary: const Color(0xFFFBC02D), // Golden Yellow

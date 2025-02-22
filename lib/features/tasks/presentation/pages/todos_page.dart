@@ -17,7 +17,7 @@ class TodosPage extends StatelessWidget {
     );
   }
 
-  AppBar _appBarBuild() => AppBar(title: Text('Todos'));
+  AppBar _appBarBuild() => AppBar(title: Text('Todos'), centerTitle: true);
 
   Widget _bodyBuild() {
     return Padding(

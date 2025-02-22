@@ -30,7 +30,7 @@ ThemeData getLightTheme() {
       ),
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
-      backgroundColor: Color(0xFFFF7043), // Soft Orange
+      backgroundColor: Color(0xFF4CAF50), // Soft Orange
       foregroundColor: Colors.white,
     ),
     colorScheme: ColorScheme.fromSwatch().copyWith(
