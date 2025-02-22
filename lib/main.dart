@@ -1,89 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:focusflow/core/network/network_info.dart';
-import 'package:focusflow/features/tasks/data/datasources/todo_local_data_source.dart';
-import 'package:focusflow/features/tasks/data/datasources/todo_remote_data_source.dart';
-import 'package:focusflow/features/tasks/data/repositories/todos_repository_impl.dart';
-import 'package:focusflow/features/tasks/domain/usecases/add_todos.dart';
-import 'package:focusflow/features/tasks/domain/usecases/delete_dotos.dart';
-import 'package:focusflow/features/tasks/domain/usecases/get_all_todos.dart';
-import 'package:focusflow/features/tasks/domain/usecases/update_todos.dart';
 import 'package:focusflow/features/tasks/presentation/bloc/add_delete_update_bloc/add_delete_update_bloc.dart';
 import 'package:focusflow/features/tasks/presentation/bloc/todo_bloc/todo_bloc.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'injection_container.dart' as di;
 
 void main() async {
-  final SharedPreferences sharedPreferences =
-      await SharedPreferences.getInstance();
-  runApp(MyApp(sharedPreferences: sharedPreferences));
+  WidgetsFlutterBinding.ensureInitialized();
+  await di.init();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final SharedPreferences sharedPreferences;
-
-  const MyApp({super.key, required this.sharedPreferences});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(
-          create:
-              (_) => TodoBloc(
-                getAllTodos: GetAllTodosUseCase(
-                  TodosRepositoryImpl(
-                    remoteDataSource: TodoRemoteDataSourceImp(),
-                    localDataSource: TodoLocalDataSourceImpl(
-                      sharedPreferences: sharedPreferences,
-                    ),
-                    networkInfo: NetworkInfoImpl(
-                      InternetConnectionChecker.createInstance(),
-                    ),
-                  ),
-                ),
-              ),
-        ),
-        BlocProvider(
-          create:
-              (_) => AddDeleteUpdateBlocBloc(
-                addTodo: AddTodosUseCase(
-                  TodosRepositoryImpl(
-                    remoteDataSource: TodoRemoteDataSourceImp(),
-                    localDataSource: TodoLocalDataSourceImpl(
-                      sharedPreferences: sharedPreferences,
-                    ),
-                    networkInfo: NetworkInfoImpl(
-                      InternetConnectionChecker.createInstance(),
-                    ),
-                  ),
-                ),
-
-                updateTodo: UpdateTodosUseCase(
-                  TodosRepositoryImpl(
-                    remoteDataSource: TodoRemoteDataSourceImp(),
-                    localDataSource: TodoLocalDataSourceImpl(
-                      sharedPreferences: sharedPreferences,
-                    ),
-                    networkInfo: NetworkInfoImpl(
-                      InternetConnectionChecker.createInstance(),
-                    ),
-                  ),
-                ),
-
-                deleteTodo: DeleteTodosUseCase(
-                  TodosRepositoryImpl(
-                    remoteDataSource: TodoRemoteDataSourceImp(),
-                    localDataSource: TodoLocalDataSourceImpl(
-                      sharedPreferences: sharedPreferences,
-                    ),
-                    networkInfo: NetworkInfoImpl(
-                      InternetConnectionChecker.createInstance(),
-                    ),
-                  ),
-                ),
-              ),
-        ),
+        BlocProvider(create: (_) => di.sl<TodoBloc>()),
+        BlocProvider(create: (_) => di.sl<AddDeleteUpdateBlocBloc>()),
       ],
       child: MaterialApp(
         title: 'Focus FLow',
