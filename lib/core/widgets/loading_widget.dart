@@ -7,10 +7,16 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: LoadingAnimationWidget.inkDrop(
-          color: Theme.of(context).primaryColor,
-          size: 200,
+      body: SafeArea(
+        child: Center(
+          child: SizedBox(
+            width: 200,
+            height: 200,
+            child: LoadingAnimationWidget.inkDrop(
+              color: Theme.of(context).primaryColor,
+              size: 200,
+            ),
+          ),
         ),
       ),
     );

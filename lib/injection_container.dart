@@ -11,6 +11,7 @@ import 'package:focusflow/features/tasks/presentation/bloc/todo_bloc/todo_bloc.d
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:focusflow/features/tasks/domain/repositories/todos_repository.dart';
 
 final sl = GetIt.instance;
 
@@ -34,7 +35,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => DeleteTodosUseCase(sl()));
 
   //Repository
-  sl.registerLazySingleton(
+  sl.registerLazySingleton<TodosRepository>(
     () => TodosRepositoryImpl(
       remoteDataSource: sl(),
       localDataSource: sl(),
@@ -43,8 +44,10 @@ Future<void> init() async {
   );
 
   //Datasources
-  sl.registerLazySingleton(() => TodoRemoteDataSourceImp());
-  sl.registerLazySingleton(
+  sl.registerLazySingleton<TodoRemoteDataSource>(
+    () => TodoRemoteDataSourceImp(),
+  );
+  sl.registerLazySingleton<TodoLocalDataSource>(
     () => TodoLocalDataSourceImpl(sharedPreferences: sl()),
   );
 

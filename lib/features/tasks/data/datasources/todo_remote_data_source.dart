@@ -25,7 +25,7 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
   Future<List<TodoModel>> getAllTodos() async {
     final response = await _dio.get(baseUrl);
     if (response.statusCode == 200) {
-      final List decodedJson = json.decode(response.data["todos"]) as List;
+      final List decodedJson = response.data["todos"] as List;
       final List<TodoModel> todoModels =
           decodedJson
               .map<TodoModel>(
