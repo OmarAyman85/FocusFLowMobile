@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:focusflow/features/tasks/domain/entities/todo.dart';
+import 'package:focusflow/features/tasks/presentation/pages/todo_detail_page.dart';
 
 class TodoListWidget extends StatelessWidget {
   final List<Todo> todos;
@@ -20,7 +21,14 @@ class TodoListWidget extends StatelessWidget {
             todos[index].completed.toString(),
             style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
           ),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => TodoDetailPage(todo: todos[index]),
+              ),
+            );
+          },
         );
       },
       separatorBuilder: (context, index) => Divider(thickness: 2),
