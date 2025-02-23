@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:focusflow/core/errors/exceptions.dart';
@@ -69,7 +71,10 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
     final todoId = todoModel.id.toString();
     final response = await _dio.put(
       '$baseUrl/$todoId',
-      data: {"todo": todoModel.todo, "completed": todoModel.completed},
+      data: jsonEncode({
+        "todo": todoModel.todo,
+        "completed": todoModel.completed,
+      }),
       options: Options(
         headers: {
           'Content-Type': "application/json",
