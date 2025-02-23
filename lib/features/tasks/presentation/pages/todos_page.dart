@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:focusflow/core/widgets/loading_widget.dart';
 import 'package:focusflow/features/tasks/presentation/bloc/todo_bloc/todo_bloc.dart';
-import 'package:focusflow/features/tasks/presentation/widgets/message_diplay_widget.dart';
-import 'package:focusflow/features/tasks/presentation/widgets/todo_list_widget.dart';
+import 'package:focusflow/features/tasks/presentation/pages/todos_add_update_page.dart';
+import 'package:focusflow/features/tasks/presentation/widgets/todos_page/message_diplay_widget.dart';
+import 'package:focusflow/features/tasks/presentation/widgets/todos_page/todo_list_widget.dart';
 
 class TodosPage extends StatelessWidget {
   const TodosPage({super.key});
@@ -13,7 +14,7 @@ class TodosPage extends StatelessWidget {
     return Scaffold(
       appBar: _appBarBuild(),
       body: _bodyBuild(),
-      floatingActionButton: _floatingActionButtonBuild(),
+      floatingActionButton: _floatingActionButtonBuild(context),
     );
   }
 
@@ -38,7 +39,17 @@ class TodosPage extends StatelessWidget {
     );
   }
 
-  Widget _floatingActionButtonBuild() {
-    return FloatingActionButton(onPressed: () {}, child: Icon(Icons.add));
+  Widget _floatingActionButtonBuild(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => TodosAddUpdatePage(isUpdate: false),
+          ),
+        );
+      },
+      child: Icon(Icons.add),
+    );
   }
 }

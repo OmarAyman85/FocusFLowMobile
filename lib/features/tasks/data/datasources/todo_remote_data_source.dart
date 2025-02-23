@@ -40,11 +40,11 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
   @override
   Future<Unit> addTodos(TodoModel todoModel) async {
     final response = await _dio.post(
-      "$baseUrl/todos/add",
+      "$baseUrl/add",
       data: {
-        "id": todoModel.id,
         'todo': todoModel.todo,
         'completed': todoModel.completed,
+        'userId': 1,
       },
       options: Options(
         headers: {
@@ -68,7 +68,7 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
   Future<Unit> updateTodos(TodoModel todoModel) async {
     final todoId = todoModel.id.toString();
     final response = await _dio.put(
-      '$baseUrl/todos/$todoId',
+      '$baseUrl/$todoId',
       data: {"todo": todoModel.todo, "completed": todoModel.completed},
       options: Options(
         headers: {
@@ -88,7 +88,7 @@ class TodoRemoteDataSourceImp implements TodoRemoteDataSource {
   @override
   Future<Unit> deleteTodos(int todoId) async {
     final response = await _dio.delete(
-      '$baseUrl/todos/$todoId',
+      '$baseUrl/$todoId',
       options: Options(
         headers: {
           'Content-type': 'application/json',
