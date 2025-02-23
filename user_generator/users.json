@@ -1,0 +1,442 @@
+[
+  {
+    "id": 1,
+    "username": "emilydavis17",
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emilydavis48@example.com",
+    "phone": "+12345678423",
+    "avatarUrl": "https://example.com/avatar3.png",
+    "bio": "This is a bio for Emily Davis.",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2025-02-24T00:20:16.975064",
+    "updatedAt": "2025-02-24T00:20:16.976061",
+    "socialLinks": {
+      "website": "https://example.com/emilydavis24",
+      "linkedin": "https://linkedin.com/in/emilydavis86",
+      "github": "https://github.com/emilydavis61"
+    },
+    "address": {
+      "street": "277 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": true, "push": false }
+    },
+    "tasks": [47, 26, 25, 19, 27],
+    "activityLogs": [
+      {
+        "id": 303,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.976061"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 2,
+    "username": "danielharris23",
+    "firstName": "Daniel",
+    "lastName": "Harris",
+    "email": "danielharris67@example.com",
+    "phone": "+12345678810",
+    "avatarUrl": "https://example.com/avatar3.png",
+    "bio": "This is a bio for Daniel Harris.",
+    "role": "user",
+    "status": "inactive",
+    "createdAt": "2025-02-24T00:20:16.977059",
+    "updatedAt": "2025-02-24T00:20:16.977059",
+    "socialLinks": {
+      "website": "https://example.com/danielharris77",
+      "linkedin": "https://linkedin.com/in/danielharris82",
+      "github": "https://github.com/danielharris8"
+    },
+    "address": {
+      "street": "832 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": true, "push": true }
+    },
+    "tasks": [9, 1, 30, 6, 19],
+    "activityLogs": [
+      {
+        "id": 323,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.977059"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 3,
+    "username": "janesmith92",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "janesmith61@example.com",
+    "phone": "+12345678424",
+    "avatarUrl": "https://example.com/avatar4.png",
+    "bio": "This is a bio for Jane Smith.",
+    "role": "manager",
+    "status": "suspended",
+    "createdAt": "2025-02-24T00:20:16.977059",
+    "updatedAt": "2025-02-24T00:20:16.977059",
+    "socialLinks": {
+      "website": "https://example.com/janesmith41",
+      "linkedin": "https://linkedin.com/in/janesmith18",
+      "github": "https://github.com/janesmith40"
+    },
+    "address": {
+      "street": "351 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": true, "push": false }
+    },
+    "tasks": [3, 36, 25, 29, 43],
+    "activityLogs": [
+      {
+        "id": 499,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.977059"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 4,
+    "username": "jessicawilson89",
+    "firstName": "Jessica",
+    "lastName": "Wilson",
+    "email": "jessicawilson36@example.com",
+    "phone": "+12345678301",
+    "avatarUrl": "https://example.com/avatar1.png",
+    "bio": "This is a bio for Jessica Wilson.",
+    "role": "admin",
+    "status": "suspended",
+    "createdAt": "2025-02-24T00:20:16.977059",
+    "updatedAt": "2025-02-24T00:20:16.977059",
+    "socialLinks": {
+      "website": "https://example.com/jessicawilson25",
+      "linkedin": "https://linkedin.com/in/jessicawilson4",
+      "github": "https://github.com/jessicawilson1"
+    },
+    "address": {
+      "street": "236 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": false, "push": true }
+    },
+    "tasks": [11, 32, 50, 2, 2],
+    "activityLogs": [
+      {
+        "id": 418,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.977059"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 5,
+    "username": "chrisbrown74",
+    "firstName": "Chris",
+    "lastName": "Brown",
+    "email": "chrisbrown97@example.com",
+    "phone": "+12345678363",
+    "avatarUrl": "https://example.com/avatar3.png",
+    "bio": "This is a bio for Chris Brown.",
+    "role": "admin",
+    "status": "suspended",
+    "createdAt": "2025-02-24T00:20:16.977059",
+    "updatedAt": "2025-02-24T00:20:16.977059",
+    "socialLinks": {
+      "website": "https://example.com/chrisbrown35",
+      "linkedin": "https://linkedin.com/in/chrisbrown49",
+      "github": "https://github.com/chrisbrown18"
+    },
+    "address": {
+      "street": "135 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": false, "push": true }
+    },
+    "tasks": [45, 16, 1, 5, 40],
+    "activityLogs": [
+      {
+        "id": 782,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.977059"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 6,
+    "username": "sarahlewis50",
+    "firstName": "Sarah",
+    "lastName": "Lewis",
+    "email": "sarahlewis4@example.com",
+    "phone": "+12345678773",
+    "avatarUrl": "https://example.com/avatar4.png",
+    "bio": "This is a bio for Sarah Lewis.",
+    "role": "user",
+    "status": "inactive",
+    "createdAt": "2025-02-24T00:20:16.977059",
+    "updatedAt": "2025-02-24T00:20:16.977059",
+    "socialLinks": {
+      "website": "https://example.com/sarahlewis91",
+      "linkedin": "https://linkedin.com/in/sarahlewis76",
+      "github": "https://github.com/sarahlewis79"
+    },
+    "address": {
+      "street": "66 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": true, "push": true }
+    },
+    "tasks": [4, 9, 34, 18, 29],
+    "activityLogs": [
+      {
+        "id": 689,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.977059"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 7,
+    "username": "chrisbrown84",
+    "firstName": "Chris",
+    "lastName": "Brown",
+    "email": "chrisbrown69@example.com",
+    "phone": "+1234567891",
+    "avatarUrl": "https://example.com/avatar1.png",
+    "bio": "This is a bio for Chris Brown.",
+    "role": "manager",
+    "status": "inactive",
+    "createdAt": "2025-02-24T00:20:16.977059",
+    "updatedAt": "2025-02-24T00:20:16.977059",
+    "socialLinks": {
+      "website": "https://example.com/chrisbrown99",
+      "linkedin": "https://linkedin.com/in/chrisbrown97",
+      "github": "https://github.com/chrisbrown56"
+    },
+    "address": {
+      "street": "994 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": false, "push": false }
+    },
+    "tasks": [6, 15, 33, 31, 43],
+    "activityLogs": [
+      {
+        "id": 130,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.977059"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 8,
+    "username": "emilydavis0",
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emilydavis85@example.com",
+    "phone": "+12345678472",
+    "avatarUrl": "https://example.com/avatar3.png",
+    "bio": "This is a bio for Emily Davis.",
+    "role": "manager",
+    "status": "active",
+    "createdAt": "2025-02-24T00:20:16.977059",
+    "updatedAt": "2025-02-24T00:20:16.977059",
+    "socialLinks": {
+      "website": "https://example.com/emilydavis73",
+      "linkedin": "https://linkedin.com/in/emilydavis60",
+      "github": "https://github.com/emilydavis67"
+    },
+    "address": {
+      "street": "511 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": true, "push": true }
+    },
+    "tasks": [40, 14, 44, 14, 6],
+    "activityLogs": [
+      {
+        "id": 437,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.977059"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 9,
+    "username": "emilydavis98",
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emilydavis49@example.com",
+    "phone": "+1234567884",
+    "avatarUrl": "https://example.com/avatar2.png",
+    "bio": "This is a bio for Emily Davis.",
+    "role": "user",
+    "status": "active",
+    "createdAt": "2025-02-24T00:20:16.978056",
+    "updatedAt": "2025-02-24T00:20:16.978056",
+    "socialLinks": {
+      "website": "https://example.com/emilydavis66",
+      "linkedin": "https://linkedin.com/in/emilydavis60",
+      "github": "https://github.com/emilydavis70"
+    },
+    "address": {
+      "street": "249 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": false, "push": true }
+    },
+    "tasks": [40, 27, 29, 17, 36],
+    "activityLogs": [
+      {
+        "id": 80,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.978056"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  },
+  {
+    "id": 10,
+    "username": "jessicawilson20",
+    "firstName": "Jessica",
+    "lastName": "Wilson",
+    "email": "jessicawilson68@example.com",
+    "phone": "+12345678672",
+    "avatarUrl": "https://example.com/avatar4.png",
+    "bio": "This is a bio for Jessica Wilson.",
+    "role": "admin",
+    "status": "inactive",
+    "createdAt": "2025-02-24T00:20:16.978056",
+    "updatedAt": "2025-02-24T00:20:16.978056",
+    "socialLinks": {
+      "website": "https://example.com/jessicawilson18",
+      "linkedin": "https://linkedin.com/in/jessicawilson66",
+      "github": "https://github.com/jessicawilson76"
+    },
+    "address": {
+      "street": "805 Main St",
+      "city": "Metropolis",
+      "state": "NY",
+      "postalCode": "10001",
+      "country": "USA"
+    },
+    "preferences": {
+      "language": "en",
+      "theme": "dark",
+      "notifications": { "email": true, "sms": false, "push": true }
+    },
+    "tasks": [11, 2, 41, 16, 22],
+    "activityLogs": [
+      {
+        "id": 845,
+        "action": "logged_in",
+        "timestamp": "2025-02-24T00:20:16.978056"
+      }
+    ],
+    "settings": {
+      "timezone": "America/New_York",
+      "dateFormat": "MM/DD/YYYY",
+      "timeFormat": "12h"
+    }
+  }
+]
